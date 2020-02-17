@@ -1,0 +1,38 @@
+@font-face{
+    font-family: "Lato";
+    src: url("/assets/Lato/Lato-Regular.ttf") format("TrueType");
+}
+
+.container{
+    width: 1020px;
+    border: 1px solid red;
+    margin: 0 auto;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    height: 89px;
+    background-color: #2d303a;
+    border-bottom: 6px solid #323746; 
+}
+
+.navigation{
+    width: 371px;
+    margin-top: 40px;
+    margin-right: 40px;
+        
+}
+
+.navigation ul{
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+}
+
+.navigation ul li a{
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 12px;
+    color: #ffffff;
+}
