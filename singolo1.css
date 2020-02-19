@@ -1,6 +1,15 @@
 @font-face{
     font-family: 'Lato';
-    src: url("/assets/fonts/Lato-Bold.ttf") format("TrueType");
+    src: url("/assets/fonts/Lato-Regular.ttf") format("TrueType");
+
+
+}
+
+@font-face {
+    font-family: 'Lato Black';
+    src: url("./assets/fonts/Lato-Black.ttf") format('TrueType');
+    font-weight: normal;
+    font-style: normal;
 }
 
 body{
@@ -11,6 +20,8 @@ body{
     width: 1020px;
     margin: 0 auto;
 }
+
+/* header */
 
 .header{
     display: flex;
@@ -70,12 +81,19 @@ body{
     margin-top: auto;
     margin-bottom: auto;
     letter-spacing: -0.1px;
+    line-height: 6.32px;
+    font-weight: 500;
+    font-family: "Lato";
+    
 }
 
 .logo span{
     color: #f06c64;
     margin-left: -5px;
 }
+
+
+/* slider */
 
 .slider{
     background-color: #f06c64;
@@ -122,6 +140,88 @@ body{
     left: 425px;
     top: 174px;
 }
+
+
+/* section our services */
+
+
+.our-services{
+    height: 495px;
+    background-color: #f2f2f2;
+    border-bottom: 6px solid #ffffff;
+    padding-right: 40px;
+    padding-left: 40px;
+
+}
+
+.services-info{
+    padding-top: 69px;
+}
+
+
+.services-info > h2{
+    color: #666d89;
+    font-family: "Lato Black";
+    font-size: 30px;
+    font-weight: 350;
+    line-height: 17.86px;
+}
+
+.services-info p{
+    margin-top: 28px;
+    color: #767e9e;
+    font-family: Lato;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 30px;
+}
+
+.services-list ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 45px;
+}
+
+.services-list ul li{
+    display: flex;
+    align-items:flex-start;
+    margin-bottom: 33px;
+    margin-right: 2px;
+    
+}
+
+.services-block-text{
+    margin-left: 20px;
+}
+
+.services-block-text > h3{
+    width: 121px;
+    height: 17px;
+    color: #666d89;
+    font-family: "Lato Black";
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 17.86px;
+    
+}
+
+.services-block-text > p{
+    color: #767e9e;
+    font-family: Lato;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 21.56px;
+    width: 218px;
+    margin-top: 11px;
+}
+
+
+
+.services-list ul li h3{
+    display: inline;
+}
+
 
 
 
