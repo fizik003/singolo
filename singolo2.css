@@ -163,7 +163,14 @@ h3{
     margin-top: 14px;
     letter-spacing: -0.1px;
     margin-bottom: 24px;
+
     
+}
+.human-about h3{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 300px;
 }
 
 .human-about p{
