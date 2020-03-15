@@ -1,5 +1,9 @@
 @import './fonts.css';
 
+html{
+    scroll-behavior: smooth;
+}
+
 body{
     font-family: "Lato";
 }
@@ -16,7 +20,7 @@ body{
     justify-content: space-between;
     height: 89px;
     background-color: #2d303a;
-    border-bottom: 6px solid #323746; 
+    border-bottom: 6px solid #323746;
 }
 
 .navigation{
@@ -33,12 +37,21 @@ body{
     text-transform: uppercase;
 }
 
-.navigation ul li a{
+
+.navigation a{
     text-decoration: none;
     font-size: 12px;
     color: #ffffff;
 
 }
+
+a.active{
+    color: #f06c64;
+    font-weight: 900;
+    
+}
+
+
 
 .navigation ul li{
     position: relative;
@@ -53,12 +66,17 @@ body{
     top: 2px;
     
 }
+
+
  
 
-.navigation ul li a:hover{
+.navigation ul li a:not(.active):hover{
     color: #f06c64;
     font-weight: 500;
+
 }
+
+
 
 
 
@@ -305,6 +323,10 @@ h3{
 
 .layout-4-columns img{
     margin-bottom: 20px;
+}
+
+img.active{
+    border: 1px solid red;
 }
 
 /* section about-us */
