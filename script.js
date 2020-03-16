@@ -30,8 +30,6 @@ function slider(){
 }
 
 // of/on screen
-
-const PHONE_BTNS = document.querySelectorAll('.phone-btn');
 const BLACK_SCREENS = document.querySelectorAll('.screen-black');
 
 function offScreen1(){
@@ -45,4 +43,33 @@ function offScreen2(){
     BLACK_SCREENS[1].classList.remove('show-black-screen');
     else
     BLACK_SCREENS[1].classList.add('show-black-screen');
+}
+
+
+
+//select tag  and sort images
+const TAGS_PORTFOLIO = document.getElementById('tags');
+const PORTFOLIO = document.getElementById('images');
+TAGS_PORTFOLIO.addEventListener('click', sortImage);
+PORTFOLIO.addEventListener('click',activeImg)
+
+function sortImage(event){
+    if (event.target.tagName === 'A'){
+        imgs = [];
+        TAGS_PORTFOLIO.querySelectorAll('div .text-tag').forEach(el => el.classList.remove('tag-active'));
+        event.target.classList.add('tag-active');
+        PORTFOLIO.querySelectorAll('img').forEach(el => imgs.push(el));
+        imgs.sort(function(){
+            return Math.random() - 0.5;
+        })
+        PORTFOLIO.innerHTML = '';
+        imgs.forEach(el => PORTFOLIO.appendChild(el));
+    }
+
+
+}
+
+function activeImg(event){
+    PORTFOLIO.querySelectorAll('img').forEach(el => el.classList.remove('active-image'));
+    event.target.classList.add('active-image');
 }
