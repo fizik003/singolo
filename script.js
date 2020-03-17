@@ -1,3 +1,4 @@
+// active nav
 const MENU = document.getElementById('menu');
 
 
@@ -8,13 +9,18 @@ MENU.addEventListener('click', (event) => {
     
 })
 
+// scroll 
+
+document.addEventListener('scroll', onScroll);
+
+
 
 
 // slider
 
 const SLIDES = document.querySelectorAll('#slides .slide');
 const ARROWS = document.querySelectorAll('.arrow');
-const SLIDER_SECTION = document.querySelector('#slider-section')
+const SLIDER_SECTION = document.querySelector('#slides')
 let currentSlide = 0;
 
 function slider(){
