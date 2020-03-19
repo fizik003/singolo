@@ -12,28 +12,50 @@ MENU.addEventListener('click', (event) => {
 // scroll 
 
 document.addEventListener('scroll', onScroll);
+function onScroll(event){
+    const curPos =  window.scrollY;
+    const sec = document.querySelectorAll('#main section');
+    const links = document.querySelectorAll('#menu a');
+
+    sec.forEach((el) =>{
+        if (el.offsetTop <= curPos + 95 && (el.offsetTop + el.offsetHeight) > curPos ){
+            links.forEach((a) => {
+                a.classList.remove('active');
+                if(el.getAttribute('id') === a.getAttribute('href').substring(1)){
+                    a.classList.add('active');
+                }
+            })
+
+        }
+    })
+
+}
 
 
 
 
 // slider
 
-const SLIDES = document.querySelectorAll('#slides .slide');
-const ARROWS = document.querySelectorAll('.arrow');
-const SLIDER_SECTION = document.querySelector('#slides')
-let currentSlide = 0;
+// const SLIDES = document.querySelectorAll('#slides .slide');
+// const ARROWS = document.querySelectorAll('.arrow');
+// const SLIDER_SECTION = document.querySelector('#slides')
+// let currentSlide = 0;
 
-function slider(){
-    SLIDES[currentSlide].classList.remove('showing');
-    currentSlide = (currentSlide + 1) % SLIDES.length;
-    SLIDES[currentSlide].classList.add('showing');
-    if(SLIDES[currentSlide].classList.contains('slide-blue')){
-        SLIDER_SECTION.style.borderBottomColor = '#5173cb';
-    }
-    else{
-        SLIDER_SECTION.style.borderBottomColor = '#ea676b';
-    }
-}
+// function slider(){
+//     SLIDES[currentSlide].classList.remove('showing');
+//     currentSlide = (currentSlide + 1) % SLIDES.length;
+//     SLIDES[currentSlide].classList.add('showing');
+//     if(SLIDES[currentSlide].classList.contains('slide-blue')){
+//         SLIDER_SECTION.style.borderBottomColor = '#5173cb';
+//     }
+//     else{
+//         SLIDER_SECTION.style.borderBottomColor = '#ea676b';
+//     }
+// }
+
+
+
+
 
 // of/on screen
 const BLACK_SCREENS = document.querySelectorAll('.screen-black');

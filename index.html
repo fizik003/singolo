@@ -17,7 +17,7 @@
                 </div>
                 <nav class="navigation">
                     <ul id="menu">
-                        <li><a class="active" href="#">home</a></li>
+                        <li><a class="active" href="#slider-section">home</a></li>
                         <li><a href="#services">services</a></li>
                         <li><a href="#portfolio">portfolio</a></li>
                         <li><a href="#about">about</a></li>
@@ -27,22 +27,25 @@
             </div>
         </div>
     </header>
-    <main class="main">
+    <main class="main" id="main">
         <section class="slider" id='slider-section'>
             <div class="container">
-                <div class="slider-content" id='slides'>
+                <div class="carousel">
+                    <div class="slider-content" id='slides'>
+                    
+                        <div class="slide slide-1 showing">
+                            <img src="./assets/img/iPhone Vertical.png" alt="vertical phone" class="vertical-phone">
+                            <img src="./assets/img/iPhone Horizontal.png" alt="horizontal phone" class="horizontal-phone">
+                            <div class="screen-black  vertical-screen"></div>
+                            <div class="screen-black  horizontal-screen"></div>
+                            <div class="phone-btn fast-phone-btn" onclick="offScreen1()"></div>
+                            <div class="phone-btn second-phone-btn" onclick="offScreen2()"></div>
+                        </div>
+                        <div class="slide slide-blue">
+                            <img src="./assets/img/Slide-2.png" alt="slide 2">
+                        </div>
+                    </div>
                     <div class="arrow button-l" onclick="slider()"></div>
-                    <div class="slide slide-1 showing">
-                        <img src="./assets/img/iPhone Vertical.png" alt="vertical phone" class="vertical-phone">
-                        <img src="./assets/img/iPhone Horizontal.png" alt="horizontal phone" class="horizontal-phone">
-                        <div class="screen-black  vertical-screen"></div>
-                        <div class="screen-black  horizontal-screen"></div>
-                        <div class="phone-btn fast-phone-btn" onclick="offScreen1()"></div>
-                        <div class="phone-btn second-phone-btn" onclick="offScreen2()"></div>
-                    </div>
-                    <div class="slide slide-blue">
-                        <img src="./assets/img/Slide-2.png" alt="slide 2">
-                    </div>
                     <div class="arrow button-r" onclick="slider()"></div>
                 </div>
             </div>
