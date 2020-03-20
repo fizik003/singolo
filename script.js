@@ -85,6 +85,14 @@ document.querySelector('.button-r').addEventListener('click', function() {
     if(isEnabled) {
         nextItem(currentItem);
     }
+    if(document.querySelector('.showing').classList.contains('slide-blue')) {
+        
+        document.querySelector('.slider-content').style.borderBottomColor = '#ea676b';
+    }
+    else {
+        document.querySelector('.slider-content').style.borderBottomColor = '#5173cb';
+
+    }
 });
 
 
