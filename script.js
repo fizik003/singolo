@@ -35,26 +35,57 @@ function onScroll(event){
 
 
 // slider
+let items = document.querySelectorAll('.slide');
+let currentItem = 0;
+let isEnabled = true;
 
-// const SLIDES = document.querySelectorAll('#slides .slide');
-// const ARROWS = document.querySelectorAll('.arrow');
-// const SLIDER_SECTION = document.querySelector('#slides')
-// let currentSlide = 0;
+function changeCurrentItem(n){
+    currentItem = (n + items.length) % items.length;
+}
 
-// function slider(){
-//     SLIDES[currentSlide].classList.remove('showing');
-//     currentSlide = (currentSlide + 1) % SLIDES.length;
-//     SLIDES[currentSlide].classList.add('showing');
-//     if(SLIDES[currentSlide].classList.contains('slide-blue')){
-//         SLIDER_SECTION.style.borderBottomColor = '#5173cb';
-//     }
-//     else{
-//         SLIDER_SECTION.style.borderBottomColor = '#ea676b';
-//     }
-// }
+function hideItem(direction) {
+    isEnabled = false;
+    items[currentItem].classList.add(direction);
+    items[currentItem].addEventListener('animationend', function() {
+        this.classList.remove('showing', direction)
+    })
+}
 
+function showItem(direction) {
+    isEnabled = false;
+    items[currentItem].classList.add('next', direction);
+    items[currentItem].addEventListener('animationend', function() {
+        this.classList.remove('next', direction);
+        this.classList.add('showing');
+        isEnabled = true;
 
+    })
+}
 
+function previousItem(n) {
+    hideItem('to-right')
+    changeCurrentItem(n - 1);
+    showItem('from-left');
+
+}
+
+document.querySelector('.button-l').addEventListener('click', function() {
+    if(isEnabled) {
+        previousItem(currentItem);
+    }
+});
+
+function nextItem(n) {
+    hideItem('to-left')
+    changeCurrentItem(n + 1);
+    showItem('from-right');
+}
+
+document.querySelector('.button-r').addEventListener('click', function() {
+    if(isEnabled) {
+        nextItem(currentItem);
+    }
+});
 
 
 // of/on screen
