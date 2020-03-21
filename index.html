@@ -9,15 +9,10 @@
     
 </head>
 <body>
-    <div class="modal-window">
-        <div class="modal-message">
-            <p>
-                Письмо отправлено
-            </p>
-            <span id="subject-text"></span>
-            <span id="description-text"></span>
-            <button id="modal-window-btn">OK</button>
+    <section class="modal-window display-none" id="modal-window" onclick="closeModal(event)">
+        <div class="modal-submit" id="modal-submit">
         </div>
+    </section>
         
     </div>
     <header class="header" >
@@ -209,11 +204,11 @@
                     <h2>Get a Quote</h2>
                     <p class="contacts-description">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
                     <div class="form">
-                        <form class="contacts-form" method="POST">
-                            <input class="field" type="text" name="name" placeholder="Name (Required)" required>
-                            <input class="field"  type="email" name="email" placeholder="Email (Required)" required>
-                            <input class="field" type="text" name="subject" placeholder="Subject">
-                            <textarea class="textarea_field field" name="message" placeholder="Describe your project in detail..." cols="30" rows="13"></textarea>
+                        <form class="contacts-form" method="POST" id="form">
+                            <input id="name" class="field" type="text" name="name" placeholder="Name (Required)" required>
+                            <input id = "email" class="field"  type="email" name="email" placeholder="Email (Required)" required>
+                            <input id="text" class="field" type="text" name="subject" placeholder="Subject">
+                            <textarea id="descr" class="textarea_field field" name="message" placeholder="Describe your project in detail..." cols="30" rows="13"></textarea>
                             <button  class="btn" type="submit" formmethod="POST">Submit</button>
                         </form>
                         <div class="form-info">

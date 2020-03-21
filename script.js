@@ -73,6 +73,14 @@ document.querySelector('.button-l').addEventListener('click', function() {
     if(isEnabled) {
         previousItem(currentItem);
     }
+    if(document.querySelector('.showing').classList.contains('slide-blue')) {
+        
+        document.querySelector('.slider-content').style.borderBottomColor = '#ea676b';
+    }
+    else {
+        document.querySelector('.slider-content').style.borderBottomColor = '#5173cb';
+
+    }
 });
 
 function nextItem(n) {
@@ -140,3 +148,57 @@ function activeImg(event){
     PORTFOLIO.querySelectorAll('img').forEach(el => el.classList.remove('active-image'));
     event.target.classList.add('active-image');
 }
+
+
+
+// modal
+
+const MODAL_WINDOW = document.getElementById('modal-window');
+const MODAL_BUTTON = document.getElementById('modal-button');
+const MODAL_SUBMIT = document.getElementById('modal-submit');
+
+const FORM = document.getElementById('form');
+const NAME_INPUT = document.getElementById('name');
+const EMAIL_INPUT = document.getElementById('email');
+const TEXT_INPUT = document.getElementById('text');
+const DESCR_INPUT = document.getElementById('descr');
+
+const closeModal = (event) => {
+    if (event.target.tagName == "SECTION" || event.target.tagName == "BUTTON") {
+        MODAL_WINDOW.classList.add('display-none');
+        MODAL_SUBMIT.querySelectorAll(".added").forEach(item => {
+            MODAL_SUBMIT.removeChild(item);
+        })
+        FORM.reset();
+    }
+}
+
+FORM.addEventListener('submit', event => {
+    if (event.keyCode == 13) {
+        event.preventDefault();
+    }
+    event.preventDefault();
+    if (NAME_INPUT.checkValidity() && EMAIL_INPUT.checkValidity()) {
+        MODAL_SUBMIT.innerHTML += "<div class='added'>The letter was sent</div>";
+        if (TEXT_INPUT.value.length == 0)
+            MODAL_SUBMIT.innerHTML += "<div class='added'>Without subject</div>";
+        else {
+            let VALUE = TEXT_INPUT.value.split('').map(item => { if (item == '<') item = '&lt;'; if (item == '>') item = '&gt;'; return item }).join('');
+            MODAL_SUBMIT.innerHTML += `<div class='added'>Subject:<span class='bold'> ${VALUE} </span></div>`;
+        }
+        if (DESCR_INPUT.value.length == 0)
+            MODAL_SUBMIT.innerHTML += "<div class='added'>Without description</div>";
+        else {
+            let VALUE = DESCR_INPUT.value.split('').map(item => { if (item == '<') item = '&lt;'; if (item == '>') item = '&gt;'; return item }).join('');
+            MODAL_SUBMIT.innerHTML += `<div class='added'>Description:<span class='bold'> ${VALUE} </span></div>`;
+        }
+        MODAL_SUBMIT.innerHTML += `<div style="text-align: center;" class="modal-button added" id='modal-button'><button>ok</button></div>`;
+        MODAL_WINDOW.classList.remove('display-none');
+    }
+})
+
+FORM.addEventListener('keydown', function(event) {
+    if (event.keyCode == 13) {
+        event.preventDefault();
+    }
+});
