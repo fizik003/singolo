@@ -202,3 +202,31 @@ FORM.addEventListener('keydown', function(event) {
         event.preventDefault();
     }
 });
+
+const HAMBURGER = document.querySelector('.hamburger')
+const LOGO = document.querySelector('.logo')
+const HEADER_WRAP = document.querySelector('.header-wrapper')
+const MENU_LINKS = document.querySelector('.menu')
+const SHADOW = document.getElementById('content-burger')
+const HOME_SECTION = document.querySelector('header');
+
+function closeBurg() {
+    if (HAMBURGER.classList.contains('hamburger-transform')) {
+        HEADER_WRAP.classList.remove('navigation__content-burger');
+        MENU_LINKS.classList.remove('burger-active');
+        MENU_LINKS.querySelectorAll('a').forEach(el => el.classList.remove('link-burger'))
+        HAMBURGER.classList.remove('hamburger-transform');
+        HEADER_WRAP.removeAttribute('id')
+        LOGO.classList.remove('navigation__logo-burger');
+        SHADOW.classList.remove('content-burger');
+    } else {
+        HEADER_WRAP.classList.add('navigation__content-burger');
+        MENU_LINKS.classList.add('burger-active');
+        MENU_LINKS.querySelectorAll('a').forEach(el => el.classList.add('link-burger'))
+        HAMBURGER.classList.add('hamburger-transform');
+        HEADER_WRAP.id = 'navigation-burger';
+        LOGO.classList.add('navigation__logo-burger');
+        SHADOW.classList.add('content-burger');
+    }
+}
+    

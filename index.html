@@ -18,21 +18,26 @@
     <header class="header" >
         <div class="container">
             <div class="header-wrapper">
-                <div class="logo">
-                    <h1>SINGOLO <span>*</span></h1>
-                </div>
+                <h1 class="logo">
+                    <span class="hamburger" onclick="closeBurg()">
+                        <span class="hamburger_line"></span>
+                    </span>
+                    SINGOLO<span class="logo-star">*</span>
+                </h1>
                 <nav class="navigation">
-                    <ul id="menu">
-                        <li><a class="active" href="#slider-section">home</a></li>
-                        <li><a href="#services">services</a></li>
-                        <li><a href="#portfolio">portfolio</a></li>
-                        <li><a href="#about">about</a></li>
-                        <li><a href="#contact">contact</a></li>
+                    <ul class="menu" id="menu">
+                        <li><a  onclick="closeBurg()" class="nav-link active" href="#slider-section">home</a></li>
+                        <li><a onclick="closeBurg()" class="nav-link" href="#services">services</a></li>
+                        <li><a onclick="closeBurg()" class="nav-link" href="#portfolio">portfolio</a></li>
+                        <li><a onclick="closeBurg()" class="nav-link" href="#about">about</a></li>
+                        <li><a onclick="closeBurg()"  class="nav-link" href="#contact">contact</a></li>
                     </ul>
                 </nav>
             </div>
         </div>
     </header>
+    <div id="content-burger" onclick="closeBurg()"></div>
+    <div class="black-line"></div>
     <main class="main" id="main">
         <section class="slider" id='slider-section'>
             <div class="container">
@@ -48,7 +53,7 @@
                             <div class="phone-btn second-phone-btn" onclick="offScreen2()"></div>
                         </div>
                         <div class="slide slide-blue">
-                            <img src="./assets/img/Slide-2.png" alt="slide 2">
+                            <img class="slide2" src="./assets/img/Slide-2.png" alt="slide 2">
                         </div>
                     </div>
                     <div class="arrow button-l"></div>
@@ -154,7 +159,7 @@
                     <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
                     <div class="layout-3-columns">
                         <div class="human">
-                            <img src="./assets/img/about-us/adam.png" alt="photo">
+                            <img class="human-img" src="./assets/img/about-us/adam.png" alt="photo">
                             <div class="human-about">
                                 <h3>Adam Jensen</h3>
                                 <p>Quisque luctus, quam eget molestie commodo, lacus purus cursus purus, nec rutrum tellus dolor id lorem.</p>
@@ -167,7 +172,7 @@
                             </div>
                         </div>
                         <div class="human">
-                            <img src="./assets/img/about-us/desmond.png" alt="photo">
+                            <img class="human-img" src="./assets/img/about-us/desmond.png" alt="photo">
                             <div class="human-about">
                                 <h3>Desmond Miles</h3>
                                 <p>Curabitur vestibulum eget mauris quis laoreet. Phasellus in quam laoreet, viverra lacus ut, ultrices velit.</p>
@@ -180,7 +185,7 @@
                             </div>
                         </div>
                         <div class="human">
-                            <img src="./assets/img/about-us/scolara.png" alt="photo">
+                            <img class="human-img" src="./assets/img/about-us/scolara.png" alt="photo">
                             <div class="human-about">
                                 <h3>Scolara Visari</h3>
                                 <p>Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet turpis, et consequat felis. Quisque condimentum.</p>
